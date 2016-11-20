@@ -1,0 +1,22 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "description": "Says hello to the world",
+  "main": "helloWorld.js",
+  "scripts": {
+    "test": "node helloWorld.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owlishDeveloper/helloWorld.git"
+  },
+  "author": "owlish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owlishDeveloper/helloWorld/issues"
+  },
+  "homepage": "https://github.com/owlishDeveloper/helloWorld#readme",
+  "dependencies": {
+    "figlet": "^1.2.0"
+  }
+}
