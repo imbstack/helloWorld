@@ -11,11 +11,10 @@
     "url": "git+https://github.com/owlishDeveloper/helloWorld.git"
   },
   "author": "owlish",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/owlishDeveloper/helloWorld/issues"
   },
-  "homepage": "https://github.com/owlishDeveloper/helloWorld#readme",
+  "homepage": "https://github.com/owlishDeveloper/helloWorld",
   "dependencies": {
     "figlet": "^1.2.0"
   }
