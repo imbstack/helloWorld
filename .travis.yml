@@ -3,10 +3,3 @@ node_js:
   - "6"
   - "5.11"
 script: node helloWorld.js
-deploy:
-  provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
-  skip_cleanup: true
-  on:
-    tags: true
