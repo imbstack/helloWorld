@@ -16,7 +16,6 @@ tasks:
           - pull_request.reopened
           - push
           - release
-          - create
     payload:
       maxRunTime: 3600
       image: "node:5"
