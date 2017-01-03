@@ -12,7 +12,6 @@ tasks:
         env: true
         events:
           - release
-          - push
     payload:
       maxRunTime: 3600
       image: "node:5"
