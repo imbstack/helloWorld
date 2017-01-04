@@ -11,6 +11,29 @@ tasks:
       github:
         env: true
         events:
+          - push
+          - pull_request.opened
+          - pull_request.synchronize
+          - pull_request.reopened
+    payload:
+      maxRunTime: 3600
+      image: "node:5"
+      command:
+        - "/bin/bash"
+        - "--login"
+        - "-c"
+        - "git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.sha}} && npm install . && npm test"
+    metadata:
+      name: "TaskCluster GitHub Tests"
+      description: "Fooling around"
+      owner: "{{ event.head.user.email }}"
+      source: "{{ event.head.repo.url }}"
+  - provisionerId: "{{ taskcluster.docker.provisionerId }}"
+    workerType: "{{ taskcluster.docker.workerType }}"
+    extra:
+      github:
+        env: true
+        events:
           - release
     payload:
       maxRunTime: 3600
