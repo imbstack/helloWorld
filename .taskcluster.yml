@@ -19,9 +19,31 @@ tasks:
         - "/bin/bash"
         - "--login"
         - "-c"
-        - "git clone -b {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.sha}} && npm install . && npm test"
+        - "git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.sha}} && npm install . && npm test"
     metadata:
       name: "TaskCluster GitHub Tests"
       description: "Fooling around"
       owner: "{{ event.head.user.email }}"
       source: "{{ event.head.repo.url }}"
+  - provisionerId: "{{ taskcluster.docker.provisionerId }}"
+    workerType: "{{ taskcluster.docker.workerType }}"
+    extra:
+      github:
+        env: true
+        events:
+          - release
+    payload:
+      maxRunTime: 3600
+      image: "node:5"
+      command:
+        - "/bin/bash"
+        - "--login"
+        - "-c"
+        - "git clone -b {{event.version}} {{event.head.repo.url}} repo && cd repo && git checkout {{event.version}} && npm install . && npm test"
+    metadata:
+      name: "TaskCluster GitHub Tests"
+      description: "Fooling around"
+      owner: "{{ event.head.user.email }}"
+      source: "{{ event.head.repo.url }}"
+Contact GitHub API Training Shop Blog About
+
