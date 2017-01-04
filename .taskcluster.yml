@@ -11,6 +11,7 @@ tasks:
       github:
         env: true
         events:
+          - push
           - pull_request.opened
           - pull_request.synchronize
           - pull_request.reopened
