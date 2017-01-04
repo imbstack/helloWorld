@@ -11,7 +11,6 @@ tasks:
       github:
         env: true
         events:
-          - push
           - release
     payload:
       maxRunTime: 3600
@@ -20,7 +19,7 @@ tasks:
         - "/bin/bash"
         - "--login"
         - "-c"
-        - "git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.sha}} && npm install . && npm test"
+        - "git clone -b {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.sha}} && npm install . && npm test"
     metadata:
       name: "TaskCluster GitHub Tests"
       description: "Fooling around"
