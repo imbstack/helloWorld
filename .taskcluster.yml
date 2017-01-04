@@ -45,5 +45,3 @@ tasks:
       description: "Fooling around"
       owner: "{{ event.head.user.email }}"
       source: "{{ event.head.repo.url }}"
-Contact GitHub API Training Shop Blog About
-
