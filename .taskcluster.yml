@@ -1,4 +1,4 @@
-version: 0
+aversion: 0
 metadata:
   name: "TaskCluster GitHub Tests"
   description: "TaskCluster GitHub fooling around"
@@ -43,7 +43,7 @@ tasks:
         - "-c"
         - "git clone -b {{event.version}} {{event.head.repo.url}} repo && cd repo && git checkout {{event.version}} && npm install . && npm test"
     metadata:
-      name: "TaskCluster GitHub Tests"
+      name: "TaskCluster Release Tests"
       description: "Fooling around"
       owner: "{{ event.head.user.email }}"
       source: "{{ event.head.repo.url }}"
