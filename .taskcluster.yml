@@ -1,4 +1,4 @@
-aversion: 0
+version: 0
 metadata:
   name: "TaskCluster GitHub Tests"
   description: "TaskCluster GitHub fooling around"
