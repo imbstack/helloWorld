@@ -14,6 +14,7 @@ tasks:
           - pull_request.opened
           - pull_request.synchronize
           - pull_request.reopened
+          - push
     payload:
       maxRunTime: 3600
       image: "node:5"
@@ -43,7 +44,7 @@ tasks:
         - "-c"
         - "git clone -b {{event.version}} {{event.head.repo.url}} repo && cd repo && git checkout {{event.version}} && npm install . && npm test"
     metadata:
-      name: "TaskCluster GitHub Tests"
+      name: "TaskCluster Release Tests"
       description: "Fooling around"
       owner: "{{ event.head.user.email }}"
       source: "{{ event.head.repo.url }}"
