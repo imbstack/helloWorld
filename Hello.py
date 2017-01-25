@@ -1,2 +1,4 @@
 hello = "Hello"
-print(hello)
+for letter in hello:
+  print(hello)
+print("Goodbye")
