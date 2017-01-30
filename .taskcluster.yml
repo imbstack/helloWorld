@@ -1,10 +1,10 @@
 {
   version: 0,
   metadata: {
-    name: "TaskCluster GitHub Tests",
-    description: "TaskCluster GitHub fooling around",
-    owner: "{{ event.head.user.email }}",
-    source: "{{ event.head.repo.url }}",
+    name: 'TaskCluster GitHub Tests',
+    description: 'TaskCluster GitHub fooling around',
+    owner: '{{ event.head.user.email }}',
+    source: '{{ event.head.repo.url }}',
   },
   tasks: [
   {
@@ -14,7 +14,7 @@
       github: {
         env: true,
         events: [
-          "pull_request.opened",
+          'pull_request.opened',
           "pull_request.synchronize",
           "pull_request.reopened",
           "push"
